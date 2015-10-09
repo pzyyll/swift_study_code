@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C5F3E0BA-C6A7-40FD-8FB0-C08A851EE7AD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>1195</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B9B30597CDE88BB784FCFFA587136BD00E0C6D02</key>
+		<string>https://github.com/pzyyll/swift_study_code.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ACM_playground/1195.playground</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B9B30597CDE88BB784FCFFA587136BD00E0C6D02</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/pzyyll/swift_study_code.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B9B30597CDE88BB784FCFFA587136BD00E0C6D02</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B9B30597CDE88BB784FCFFA587136BD00E0C6D02</string>
+			<key>IDESourceControlWCCName</key>
+			<string>swift_study_code</string>
+		</dict>
+	</array>
+</dict>
+</plist>
