@@ -5,8 +5,6 @@ import UIKit
 //使用最新xcode, 7.0以上版本
 //1056
 
-var inputNum = 1000
-
 for inNum in 2...1000 {
     var sum = 0
     for x in 1..<inNum {
