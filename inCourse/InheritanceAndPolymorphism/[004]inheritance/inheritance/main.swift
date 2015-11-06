@@ -47,11 +47,14 @@ class Teacher: User {
     }
 }
 
+
+
 let allPeople = [
     Teacher(name: "Zhang", ID: "s0001"),
     Student(name: "Li", ID: "b0001"),
     Admin(name: "Hua", ID: "e0001", auth: 2)
 ]
+
 //实现多态，i是用户基类；
 for i in allPeople {
     i.call()

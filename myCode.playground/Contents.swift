@@ -405,7 +405,7 @@ prefix func +++ (inout vector: Vector2D) -> Vector2D {
 (+++c).x
 c.x
 */
-
+/*
 class User {
     var name = "";
     var ID = "";
@@ -490,3 +490,12 @@ func callAdmin(user: User) {
 
 callAdmin(adminA)
 callAdmin(studentA)
+*/
+
+
+
+var str = "abcdefg"
+
+for (i, j) in str.characters.enumerate() {
+    print("\(i): \(j)")
+}
