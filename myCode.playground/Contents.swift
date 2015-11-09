@@ -490,6 +490,7 @@ func callAdmin(user: User) {
 
 callAdmin(adminA)
 callAdmin(studentA)
+<<<<<<< Updated upstream
 */
 
 
@@ -499,3 +500,23 @@ var str = "abcdefg"
 for (i, j) in str.characters.enumerate() {
     print("\(i): \(j)")
 }
+=======
+
+class Person {
+    var Phone = "" {
+        willSet {
+            if newValue.characters.count != 11 {
+                print("手机位数不正确！")
+            }
+        }
+    }
+    
+    init(phoneNum: String) {
+        self.Phone = phoneNum
+    }
+}
+
+let oneA = Person(phoneNum: "1334223219")
+oneA.Phone = "13342232190"
+
+>>>>>>> Stashed changes
