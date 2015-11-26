@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var btnLogin: UIButton!
     var btnReg: UIButton!
-    var btnForgetPws: UIButton!
+    var btnNeedHelp: UIButton!
     
     var switchPwd: UISwitch!
     
@@ -48,16 +48,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         rect.origin = textPwd.frame.origin
         rect.origin.y += rect.size.height + 15
         rect.size = textPwd.frame.size
-        rect.size.width = rect.size.width / 2 - 10;
         btnLogin = UIButton(frame: rect)
         
-        rect.origin.x += rect.size.width + 20
+        rect.origin = btnLogin.frame.origin
+        rect.origin.y += btnLogin.frame.size.height
+        rect.size.width = btnLogin.frame.width * 0.33
         btnReg = UIButton(frame: rect)
+        
+        rect.origin = btnReg.frame.origin
+        rect.origin.x += btnLogin.frame.width / 2
+        rect.size = btnReg.frame.size
+        rect.size.width = btnLogin.frame.width / 2
+        btnNeedHelp = UIButton(frame: rect)
         
         rect.origin = textPwd.frame.origin
         rect.origin.x += textPwd.frame.size.width + 5
         rect.size.width = 50
         switchPwd = UISwitch(frame: rect)
+        
         
         self.view.addSubview(labelUsername)
         self.view.addSubview(labelPwd)
@@ -65,13 +73,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(textPwd)
         self.view.addSubview(btnLogin)
         self.view.addSubview(btnReg)
+        self.view.addSubview(btnNeedHelp)
         self.view.addSubview(switchPwd)
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.greenColor()
+        self.view.backgroundColor = UIColor(red: 242, green: 242, blue: 242, alpha: 1)
         
         labelUsername.text = "User Name"
         labelUsername.textColor = UIColor.blackColor()
@@ -91,15 +100,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textUsername.delegate = self
         
         textPwd.borderStyle = UITextBorderStyle.RoundedRect
+        textUsername.returnKeyType = .Done
         textPwd.delegate = self
         textPwd.secureTextEntry = true
         
         btnLogin.setTitle("Login", forState: .Normal)
-        btnLogin.backgroundColor = UIColor.blueColor()
+        btnLogin.backgroundColor = UIColor.darkGrayColor()
         btnLogin.addTarget(self, action: Selector("login"), forControlEvents: UIControlEvents.TouchUpInside)
+        btnLogin.setTitleColor(UIColor.redColor(), forState: UIControlState.Focused)
+        btnLogin.enabled = false
         
         btnReg.setTitle("Sign Up", forState: .Normal)
-        btnReg.backgroundColor = UIColor.blueColor()
+        btnReg.titleLabel?.font = UIFont.systemFontOfSize(12)
+        btnReg.titleLabel?.textAlignment = .Left
+        btnReg.frame.origin.x -= 10
+        print(btnReg.titleLabel?.frame)
+        btnReg.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        btnReg.backgroundColor = nil
+        btnReg.addTarget(self, action: Selector("register"), forControlEvents: .TouchDragInside)
+        
+        btnNeedHelp.setTitle("Need help?", forState: .Normal)
+        btnNeedHelp.titleLabel?.font = UIFont.systemFontOfSize(12)
+        btnNeedHelp.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        btnNeedHelp.frame.origin.x += 17
         
         switchPwd.addTarget(self, action: Selector("switch_pwd_appear"), forControlEvents: UIControlEvents.ValueChanged)
         // Do any additional setup after loading the view.
@@ -132,11 +155,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alertView.show()
     }
     
+    func register() {
+        print("it's register")
+    }
+    
     func switch_pwd_appear() {
         if switchPwd.on {
-            textPwd.secureTextEntry = true
-        } else {
             textPwd.secureTextEntry = false
+        } else {
+            textPwd.secureTextEntry = true
         }
     }
     /*
