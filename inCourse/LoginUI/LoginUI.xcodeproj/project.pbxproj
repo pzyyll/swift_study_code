@@ -15,6 +15,8 @@
 		E6683F5A1BFEF4A100162D7D /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6683F591BFEF4A100162D7D /* LoginUITests.swift */; };
 		E6683F651BFEF4A200162D7D /* LoginUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6683F641BFEF4A200162D7D /* LoginUIUITests.swift */; };
 		E6683F741BFEF73D00162D7D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6683F731BFEF73D00162D7D /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E6F7DA531C0829590065866E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7DA521C0829590065866E /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E6F7DA561C08360D0065866E /* SegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7DA551C08360D0065866E /* SegViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		E6683F641BFEF4A200162D7D /* LoginUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIUITests.swift; sourceTree = "<group>"; };
 		E6683F661BFEF4A200162D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6683F731BFEF73D00162D7D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E6F7DA521C0829590065866E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = LoginUITests/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
+		E6F7DA551C08360D0065866E /* SegViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		E6683F401BFEF4A100162D7D /* LoginUI */ = {
 			isa = PBXGroup;
 			children = (
+				E6F7DA541C0835980065866E /* UIsegmentedControl */,
 				E6683F721BFEF6DE00162D7D /* LoginAndOut */,
 				E6683F411BFEF4A100162D7D /* AppDelegate.swift */,
 				E6683F451BFEF4A100162D7D /* Main.storyboard */,
@@ -132,8 +137,17 @@
 			isa = PBXGroup;
 			children = (
 				E6683F731BFEF73D00162D7D /* LoginViewController.swift */,
+				E6F7DA521C0829590065866E /* RegisterViewController.swift */,
 			);
 			name = LoginAndOut;
+			sourceTree = "<group>";
+		};
+		E6F7DA541C0835980065866E /* UIsegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				E6F7DA551C08360D0065866E /* SegViewController.swift */,
+			);
+			name = UIsegmentedControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6683F741BFEF73D00162D7D /* LoginViewController.swift in Sources */,
+				E6F7DA561C08360D0065866E /* SegViewController.swift in Sources */,
 				E6683F4A1BFEF4A100162D7D /* LoginUI.xcdatamodeld in Sources */,
 				E6683F421BFEF4A100162D7D /* AppDelegate.swift in Sources */,
+				E6F7DA531C0829590065866E /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +511,7 @@
 				E6683F6B1BFEF4A200162D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6683F6C1BFEF4A200162D7D /* Build configuration list for PBXNativeTarget "LoginUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +520,7 @@
 				E6683F6E1BFEF4A200162D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6683F6F1BFEF4A200162D7D /* Build configuration list for PBXNativeTarget "LoginUIUITests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +529,7 @@
 				E6683F711BFEF4A200162D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

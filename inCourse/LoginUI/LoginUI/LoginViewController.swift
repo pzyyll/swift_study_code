@@ -20,6 +20,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var btnNeedHelp: UIButton!
     
     var switchPwd: UISwitch!
+    var imageView: UIImageView!
     
     override func loadView() {
         super.loadView()
@@ -66,7 +67,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         rect.size.width = 50
         switchPwd = UISwitch(frame: rect)
         
+        imageView = UIImageView()
+        imageView.frame = self.view.frame
+        imageView.image = UIImage(named: "icon3")
         
+        self.view.addSubview(imageView)
         self.view.addSubview(labelUsername)
         self.view.addSubview(labelPwd)
         self.view.addSubview(textUsername)
@@ -100,24 +105,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textUsername.delegate = self
         
         textPwd.borderStyle = UITextBorderStyle.RoundedRect
-        textUsername.returnKeyType = .Done
+        textPwd.returnKeyType = .Done
         textPwd.delegate = self
         textPwd.secureTextEntry = true
         
         btnLogin.setTitle("Login", forState: .Normal)
         btnLogin.backgroundColor = UIColor.darkGrayColor()
         btnLogin.addTarget(self, action: Selector("login"), forControlEvents: UIControlEvents.TouchUpInside)
-        btnLogin.setTitleColor(UIColor.redColor(), forState: UIControlState.Focused)
+        btnLogin.setTitleColor(UIColor.redColor(), forState: UIControlState.Highlighted)
         btnLogin.enabled = false
+
         
         btnReg.setTitle("Sign Up", forState: .Normal)
         btnReg.titleLabel?.font = UIFont.systemFontOfSize(12)
         btnReg.titleLabel?.textAlignment = .Left
         btnReg.frame.origin.x -= 10
-        print(btnReg.titleLabel?.frame)
         btnReg.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        btnReg.setTitleColor(UIColor.redColor(), forState: UIControlState.Highlighted)
         btnReg.backgroundColor = nil
-        btnReg.addTarget(self, action: Selector("register"), forControlEvents: .TouchDragInside)
+        btnReg.addTarget(self, action: Selector("register:"), forControlEvents: UIControlEvents.TouchUpInside)
+        
         
         btnNeedHelp.setTitle("Need help?", forState: .Normal)
         btnNeedHelp.titleLabel?.font = UIFont.systemFontOfSize(12)
@@ -125,6 +132,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         btnNeedHelp.frame.origin.x += 17
         
         switchPwd.addTarget(self, action: Selector("switch_pwd_appear"), forControlEvents: UIControlEvents.ValueChanged)
+        
+
         // Do any additional setup after loading the view.
     }
 
@@ -151,12 +160,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func login() {
         print("it's login");
-        let alertView = UIAlertView(title: "Warn", message: "功能暂时无", delegate: self, cancelButtonTitle: "确定")
-        alertView.show()
+//        let alertView = UIAlertView(title: "Warn", message: "功能暂时无", delegate: self, cancelButtonTitle: "确定")
+//        alertView.show()
+//        let alertView = UIAlertController(title: "Warn", message: "功能暂时无", preferredStyle: UIAlertControllerStyle.Alert)
+//        alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+//        self.presentViewController(alertView, animated: true, completion: nil)
+        
+        let segView = SegViewController()
+        self.presentViewController(segView, animated: true, completion: nil)
     }
     
-    func register() {
+    func register(sender: UIButton) {
         print("it's register")
+        
+        let reg = RegisterViewController()
+        reg.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        self.presentViewController(reg, animated: true, completion: nil)
     }
     
     func switch_pwd_appear() {
