@@ -22,6 +22,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var switchPwd: UISwitch!
     var imageView: UIImageView!
     
+    var imageUsername: UIImageView!
+    var imagePwd: UIImageView!
+    
     override func loadView() {
         super.loadView()
         
@@ -81,19 +84,33 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(btnNeedHelp)
         self.view.addSubview(switchPwd)
         
+//        imageUsername = UIImageView(image: UIImage(named: "userIcon"))
+//        imageUsername.frame = CGRectMake(0, 0, 30, 30)
+//        imageUsername.frame.origin.x = textUsername.frame.origin.x - 6 -
+//            imageUsername.frame.width
+//        imageUsername.frame.origin.y = textUsername.frame.origin.y
+//        imageUsername.bounds.size.width -= 5
+//        imageUsername.bounds.size.height -= 5
+//        self.view.addSubview(imageUsername)
+//        
+//        imagePwd = UIImageView(image: UIImage(named: "pwdIcon"))
+//        imagePwd.frame.origin.x = textUsername.frame.origin.x
+//        imagePwd.frame.origin.y = textPwd.frame.origin.y
+//        imagePwd.frame.size = imageUsername.frame.size
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 242, green: 242, blue: 242, alpha: 1)
         
-        labelUsername.text = "User Name"
+        //labelUsername.text = "User Name"
         labelUsername.textColor = UIColor.blackColor()
         labelUsername.textAlignment = NSTextAlignment.Right
         labelUsername.font = UIFont.systemFontOfSize(15)
         
         
-        labelPwd.text = "Passwd"
+        //labelPwd.text = "Passwd"
         labelPwd.textColor = UIColor.blackColor()
         labelPwd.textAlignment = NSTextAlignment.Right
         labelPwd.font = UIFont.systemFontOfSize(15)
@@ -103,11 +120,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textUsername.returnKeyType = .Next
         textUsername.clearButtonMode = UITextFieldViewMode.WhileEditing
         textUsername.delegate = self
+        imageUsername = UIImageView(image: UIImage(named: "userIcon"))
+        textUsername.leftView = imageUsername
+        textUsername.leftView?.bounds.size.width -= 4;
+        textUsername.leftView?.bounds.size.height -= 4;
+        textUsername.leftViewMode = .Always
         
         textPwd.borderStyle = UITextBorderStyle.RoundedRect
         textPwd.returnKeyType = .Done
+        textPwd.clearButtonMode = .WhileEditing
         textPwd.delegate = self
         textPwd.secureTextEntry = true
+        imagePwd = UIImageView(image: UIImage(named: "pwdIcon"))
+        textPwd.leftView = imagePwd
+        textPwd.leftViewMode = .Always
+        textPwd.leftView?.bounds.size.width -= 3
+        textPwd.leftView?.bounds.size.height -= 3
         
         btnLogin.setTitle("Login", forState: .Normal)
         btnLogin.backgroundColor = UIColor.darkGrayColor()
@@ -148,26 +176,78 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true;
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        if (textUsername.text!.isEmpty || textPwd.text!.isEmpty) {
+//    func textFieldDidEndEditing(textField: UITextField) {
+//        if (textUsername.text!.isEmpty || textPwd.text!.isEmpty) {
+//            btnLogin.enabled = false
+//            btnLogin.backgroundColor = UIColor.darkGrayColor()
+//        } else {
+//            btnLogin.enabled = true
+//            btnLogin.backgroundColor = UIColor.blueColor()
+//        }
+//        print("DidEndEditing")
+//    }
+//    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+//        print("ShouldEndEditing")
+//        return true
+//    }
+//    func textFieldDidBeginEditing(textField: UITextField) {
+//        if !textUsername.text!.isEmpty {
+//            btnLogin.enabled = true
+//            btnLogin.backgroundColor = UIColor.blueColor()
+//            print(textField.text)
+//        }
+//        print("DidBeginEditing")
+//    }
+    
+//    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+//        print("shouldBeginEditing")
+//        
+//        return true
+//    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        //change the login button states
+        if textUsername.text!.isEmpty {
             btnLogin.enabled = false
             btnLogin.backgroundColor = UIColor.darkGrayColor()
-        } else {
-            btnLogin.enabled = true
-            btnLogin.backgroundColor = UIColor.blueColor()
+            return true
         }
+        if textField.text!.isEmpty && !string.isEmpty {
+            btnLogin.enabled = true
+            btnLogin.backgroundColor = UIColor(red: 156 / 255, green: 205 / 255, blue: 217 / 255, alpha: 1)
+        }
+        if range.location == 0 && range.length > 0 {
+            btnLogin.enabled = false
+            btnLogin.backgroundColor = UIColor.darkGrayColor()
+        }
+        
+        return true
+    }
+    
+    //?如何知道响应的是哪个文本框？
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        btnLogin.enabled = false
+        btnLogin.backgroundColor = UIColor.darkGrayColor()
+    
+        return true
     }
     
     func login() {
         print("it's login");
-//        let alertView = UIAlertView(title: "Warn", message: "功能暂时无", delegate: self, cancelButtonTitle: "确定")
-//        alertView.show()
+//淘汰        let alertView = UIAlertView(title: "Warn", message: "功能暂时无", delegate: self, cancelButtonTitle: "确定")
+//            alertView.show()
 //        let alertView = UIAlertController(title: "Warn", message: "功能暂时无", preferredStyle: UIAlertControllerStyle.Alert)
 //        alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
 //        self.presentViewController(alertView, animated: true, completion: nil)
-        
-        let segView = SegViewController()
-        self.presentViewController(segView, animated: true, completion: nil)
+        if textUsername.text == "czl" && textPwd.text == "123456789" {
+            let segView = SegViewController()
+            self.presentViewController(segView, animated: true, completion: nil)
+        } else {
+            let alertView = UIAlertController(title: "Warn", message: "用户名或密码错误", preferredStyle: .Alert)
+            alertView.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+            self.presentViewController(alertView, animated: true, completion: nil)
+        }
     }
     
     func register(sender: UIButton) {

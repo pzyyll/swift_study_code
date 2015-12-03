@@ -119,27 +119,42 @@ class SegViewController: UIViewController, UIActionSheetDelegate, UIPickerViewDa
             alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
             self.presentViewController(alertView, animated: true, completion: nil)
         case 1:
-            var sheet = UIActionSheet(title: "提示", delegate: self, cancelButtonTitle: "OK", destructiveButtonTitle: "Select", otherButtonTitles: "Man", "Lady")
-            sheet.delegate = self
-            sheet.showInView(self.view)
+//            let sheet = UIActionSheet(title: "提示", delegate: self, cancelButtonTitle: "OK", destructiveButtonTitle: "Select", otherButtonTitles: "Man", "Lady")
+//            sheet.delegate = self
+//            sheet.showInView(self.view)
+            
+            let sheetCtr = UIAlertController(title: "提示", message: "", preferredStyle: .ActionSheet)
+            let okOption = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+            let manOption = UIAlertAction(title: "Man", style: UIAlertActionStyle.Default, handler: nil)
+            let ladyOption = UIAlertAction(title: "Lady", style: UIAlertActionStyle.Default, handler: nil)
+            
+            sheetCtr.addAction(okOption)
+            sheetCtr.addAction(manOption)
+            sheetCtr.addAction(ladyOption)
+            
+            self.presentViewController(sheetCtr, animated: true, completion: nil)
+            
         case 2:
             self.pickerView.dataSource = self
             self.pickerView.delegate = self
             self.pickerView.showsSelectionIndicator = true
+            self.pickerView.backgroundColor = UIColor.whiteColor()
             //设置显示默认值
             self.pickerView.selectRow(1, inComponent: 0, animated: true)
             self.view.bringSubviewToFront(self.pickerView)
+            btnDisplay.setTitle("Display select", forState: .Normal)
         case 3:
             self.view.bringSubviewToFront(self.datePicker)
+            self.datePicker.backgroundColor = UIColor.whiteColor()
             btnDisplay.setTitle("Display Time", forState: .Normal)
         default:
             break
         }
     }
     
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        print(actionSheet.buttonTitleAtIndex(buttonIndex))
-    }
+//    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+//        print(actionSheet.buttonTitleAtIndex(buttonIndex))
+//    }
     
     //设置选择器各项的内容，属于UIPickerViewDelegate协议
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -160,14 +175,14 @@ class SegViewController: UIViewController, UIActionSheetDelegate, UIPickerViewDa
         
         switch sender.titleLabel!.text! {
         case "Display Time":
-                var date = self.datePicker.date
-                var dformater = NSDateFormatter()
+            var date = self.datePicker.date
+            var dformater = NSDateFormatter()
             dformater.dateFormat = "yyyy年MM月dd日 HH:mm:ss"
             var dateStr = dformater.stringFromDate(date)
                 
-                let alertView = UIAlertController(title: "Warn", message: "您选择的日期是", preferredStyle: UIAlertControllerStyle.Alert)
-                alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-                self.presentViewController(alertView, animated: true, completion: nil)
+            let alertView = UIAlertController(title: "Warn", message: "您选择的日期是:"+dateStr, preferredStyle: UIAlertControllerStyle.Alert)
+            alertView.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(alertView, animated: true, completion: nil)
         case "Display select":
             let idx = self.pickerView.selectedRowInComponent(0)
             
