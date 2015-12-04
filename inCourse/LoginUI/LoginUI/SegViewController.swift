@@ -147,6 +147,9 @@ class SegViewController: UIViewController, UIActionSheetDelegate, UIPickerViewDa
             self.view.bringSubviewToFront(self.datePicker)
             self.datePicker.backgroundColor = UIColor.whiteColor()
             btnDisplay.setTitle("Display Time", forState: .Normal)
+        case 4:
+            let mapViewCtr = MapViewController()
+            self.presentViewController(mapViewCtr, animated: true, completion: nil)
         default:
             break
         }

@@ -14,9 +14,11 @@
 		E6683F4F1BFEF4A100162D7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6683F4D1BFEF4A100162D7D /* LaunchScreen.storyboard */; };
 		E6683F5A1BFEF4A100162D7D /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6683F591BFEF4A100162D7D /* LoginUITests.swift */; };
 		E6683F651BFEF4A200162D7D /* LoginUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6683F641BFEF4A200162D7D /* LoginUIUITests.swift */; };
-		E6683F741BFEF73D00162D7D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6683F731BFEF73D00162D7D /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		E6F7DA531C0829590065866E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7DA521C0829590065866E /* RegisterViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		E6F7DA561C08360D0065866E /* SegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7DA551C08360D0065866E /* SegViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E6683F741BFEF73D00162D7D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6683F731BFEF73D00162D7D /* LoginViewController.swift */; };
+		E68C5A681C115D6200151701 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68C5A671C115D6200151701 /* MapViewController.swift */; };
+		E68C5A6A1C115E0700151701 /* dalianMap.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E68C5A691C115E0700151701 /* dalianMap.jpg */; };
+		E6F7DA531C0829590065866E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7DA521C0829590065866E /* RegisterViewController.swift */; };
+		E6F7DA561C08360D0065866E /* SegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7DA551C08360D0065866E /* SegViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		E6683F641BFEF4A200162D7D /* LoginUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIUITests.swift; sourceTree = "<group>"; };
 		E6683F661BFEF4A200162D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6683F731BFEF73D00162D7D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E68C5A671C115D6200151701 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E68C5A691C115E0700151701 /* dalianMap.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dalianMap.jpg; sourceTree = "<group>"; };
 		E6F7DA521C0829590065866E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = LoginUITests/RegisterViewController.swift; sourceTree = SOURCE_ROOT; };
 		E6F7DA551C08360D0065866E /* SegViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +107,8 @@
 		E6683F401BFEF4A100162D7D /* LoginUI */ = {
 			isa = PBXGroup;
 			children = (
+				E68C5A6B1C1171D000151701 /* TableView */,
+				E68C5A661C115D3000151701 /* MapView */,
 				E6F7DA541C0835980065866E /* UIsegmentedControl */,
 				E6683F721BFEF6DE00162D7D /* LoginAndOut */,
 				E6683F411BFEF4A100162D7D /* AppDelegate.swift */,
@@ -140,6 +146,22 @@
 				E6F7DA521C0829590065866E /* RegisterViewController.swift */,
 			);
 			name = LoginAndOut;
+			sourceTree = "<group>";
+		};
+		E68C5A661C115D3000151701 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				E68C5A691C115E0700151701 /* dalianMap.jpg */,
+				E68C5A671C115D6200151701 /* MapViewController.swift */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
+		E68C5A6B1C1171D000151701 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TableView;
 			sourceTree = "<group>";
 		};
 		E6F7DA541C0835980065866E /* UIsegmentedControl */ = {
@@ -256,6 +278,7 @@
 				E6683F4F1BFEF4A100162D7D /* LaunchScreen.storyboard in Resources */,
 				E6683F4C1BFEF4A100162D7D /* Assets.xcassets in Resources */,
 				E6683F471BFEF4A100162D7D /* Main.storyboard in Resources */,
+				E68C5A6A1C115E0700151701 /* dalianMap.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6683F741BFEF73D00162D7D /* LoginViewController.swift in Sources */,
+				E68C5A681C115D6200151701 /* MapViewController.swift in Sources */,
 				E6F7DA561C08360D0065866E /* SegViewController.swift in Sources */,
 				E6683F4A1BFEF4A100162D7D /* LoginUI.xcdatamodeld in Sources */,
 				E6683F421BFEF4A100162D7D /* AppDelegate.swift in Sources */,
