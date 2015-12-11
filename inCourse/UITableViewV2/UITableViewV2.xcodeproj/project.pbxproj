@@ -16,7 +16,8 @@
 		4C49153E1C16FD5400F754B2 /* UITableViewV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C49153D1C16FD5400F754B2 /* UITableViewV2Tests.swift */; };
 		4C4915491C16FD5400F754B2 /* UITableViewV2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4915481C16FD5400F754B2 /* UITableViewV2UITests.swift */; };
 		4C4915581C16FD8100F754B2 /* UITableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4915571C16FD8100F754B2 /* UITableViewController.swift */; };
-		4C49155A1C16FF7B00F754B2 /* Controls.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C4915591C16FF7B00F754B2 /* Controls.plist */; };
+		E6FD10231C1A95A3006ACE32 /* Controls.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6FD10221C1A95A3006ACE32 /* Controls.plist */; };
+		E6FD10251C1A961A006ACE32 /* MyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD10241C1A961A006ACE32 /* MyDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,8 @@
 		4C4915481C16FD5400F754B2 /* UITableViewV2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewV2UITests.swift; sourceTree = "<group>"; };
 		4C49154A1C16FD5400F754B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C4915571C16FD8100F754B2 /* UITableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewController.swift; sourceTree = "<group>"; };
-		4C4915591C16FF7B00F754B2 /* Controls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Controls.plist; path = ../../../../UITableView/UITableView/Controls.plist; sourceTree = "<group>"; };
+		E6FD10221C1A95A3006ACE32 /* Controls.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Controls.plist; sourceTree = "<group>"; };
+		E6FD10241C1A961A006ACE32 /* MyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		4C4915241C16FD5400F754B2 /* UITableViewV2 */ = {
 			isa = PBXGroup;
 			children = (
+				E6FD10241C1A961A006ACE32 /* MyDetailViewController.swift */,
 				4C4915561C16FD6100F754B2 /* UITableView */,
 				4C4915251C16FD5400F754B2 /* AppDelegate.swift */,
 				4C4915271C16FD5400F754B2 /* ViewController.swift */,
@@ -110,8 +113,8 @@
 				4C49152F1C16FD5400F754B2 /* Assets.xcassets */,
 				4C4915311C16FD5400F754B2 /* LaunchScreen.storyboard */,
 				4C4915341C16FD5400F754B2 /* Info.plist */,
-				4C4915591C16FF7B00F754B2 /* Controls.plist */,
 				4C49152C1C16FD5400F754B2 /* UITableViewV2.xcdatamodeld */,
+				E6FD10221C1A95A3006ACE32 /* Controls.plist */,
 			);
 			path = UITableViewV2;
 			sourceTree = "<group>";
@@ -246,8 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C49155A1C16FF7B00F754B2 /* Controls.plist in Resources */,
 				4C4915331C16FD5400F754B2 /* LaunchScreen.storyboard in Resources */,
+				E6FD10231C1A95A3006ACE32 /* Controls.plist in Resources */,
 				4C4915301C16FD5400F754B2 /* Assets.xcassets in Resources */,
 				4C49152B1C16FD5400F754B2 /* Main.storyboard in Resources */,
 			);
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6FD10251C1A961A006ACE32 /* MyDetailViewController.swift in Sources */,
 				4C4915281C16FD5400F754B2 /* ViewController.swift in Sources */,
 				4C4915261C16FD5400F754B2 /* AppDelegate.swift in Sources */,
 				4C49152E1C16FD5400F754B2 /* UITableViewV2.xcdatamodeld in Sources */,
@@ -504,6 +508,7 @@
 				4C49154F1C16FD5400F754B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C4915501C16FD5400F754B2 /* Build configuration list for PBXNativeTarget "UITableViewV2Tests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +517,7 @@
 				4C4915521C16FD5400F754B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C4915531C16FD5400F754B2 /* Build configuration list for PBXNativeTarget "UITableViewV2UITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +526,7 @@
 				4C4915551C16FD5400F754B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

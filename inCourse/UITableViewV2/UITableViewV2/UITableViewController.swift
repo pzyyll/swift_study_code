@@ -31,7 +31,7 @@ class UITableViewController: UIViewController, UITableViewDataSource, UITableVie
         
         self.view.backgroundColor = UIColor.whiteColor()
         
-        var rect = CGRectMake(0, 20, self.view.frame.width, 30)
+        var rect = CGRectMake(0, 100, self.view.frame.width, 30)
         self.toolBar  = UIToolbar(frame: rect)
         let btnPlain = UIBarButtonItem(
             title: "Plain",
@@ -189,7 +189,11 @@ class UITableViewController: UIViewController, UITableViewDataSource, UITableVie
             preferredStyle: .Alert);
         let btnOk = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
         alterView.addAction(btnOk);
-        self.presentViewController(alterView, animated: true, completion: nil)
+        //self.presentViewController(alterView, animated: true, completion: nil)
+        
+        let detail = MyDetailViewController()
+        detail.title = itemString
+        self.navigationController?.pushViewController(detail, animated: true)
     }
     
     //long press

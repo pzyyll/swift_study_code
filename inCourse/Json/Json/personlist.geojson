@@ -1,0 +1,13 @@
+[
+ {
+ "id": 1,
+ "Name": "唐僧",
+ "HobbyList": ["炼精", "Sing"]
+ }
+ ,
+ {
+ "id": 2,
+ "Name": "覃明明",
+ "HobbyList": ["lu", "haha", "yy"]
+ }
+]
