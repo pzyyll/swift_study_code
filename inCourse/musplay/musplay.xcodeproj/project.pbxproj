@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6F4DB121C23DE67008806FF /* 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6F4DB111C23DE67008806FF /* 01.mp3 */; };
 		E6FD10F51C1AC31A006ACE32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD10F41C1AC31A006ACE32 /* AppDelegate.swift */; };
 		E6FD10F71C1AC31A006ACE32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD10F61C1AC31A006ACE32 /* ViewController.swift */; };
 		E6FD10FA1C1AC31A006ACE32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FD10F81C1AC31A006ACE32 /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		E6FD110D1C1AC31A006ACE32 /* musplayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD110C1C1AC31A006ACE32 /* musplayTests.swift */; };
 		E6FD11181C1AC31A006ACE32 /* musplayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD11171C1AC31A006ACE32 /* musplayUITests.swift */; };
 		E6FD11281C1AC4E5006ACE32 /* MusicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD11271C1AC4E5006ACE32 /* MusicTableViewController.swift */; };
-		E6FD112A1C1AC643006ACE32 /* 01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E6FD11291C1AC643006ACE32 /* 01.mp3 */; };
 		E6FD112C1C1AC73D006ACE32 /* Son.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD112B1C1AC73D006ACE32 /* Son.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6F4DB111C23DE67008806FF /* 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 01.mp3; sourceTree = "<group>"; };
 		E6FD10F11C1AC31A006ACE32 /* musplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = musplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD10F41C1AC31A006ACE32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6FD10F61C1AC31A006ACE32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		E6FD11171C1AC31A006ACE32 /* musplayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = musplayUITests.swift; sourceTree = "<group>"; };
 		E6FD11191C1AC31A006ACE32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6FD11271C1AC4E5006ACE32 /* MusicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicTableViewController.swift; sourceTree = "<group>"; };
-		E6FD11291C1AC643006ACE32 /* 01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 01.mp3; sourceTree = "<group>"; };
 		E6FD112B1C1AC73D006ACE32 /* Son.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Son.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,7 @@
 		E6FD10E81C1AC31A006ACE32 = {
 			isa = PBXGroup;
 			children = (
-				E6FD11291C1AC643006ACE32 /* 01.mp3 */,
+				E6F4DB111C23DE67008806FF /* 01.mp3 */,
 				E6FD10F31C1AC31A006ACE32 /* musplay */,
 				E6FD110B1C1AC31A006ACE32 /* musplayTests */,
 				E6FD11161C1AC31A006ACE32 /* musplayUITests */,
@@ -242,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6FD11021C1AC31A006ACE32 /* LaunchScreen.storyboard in Resources */,
-				E6FD112A1C1AC643006ACE32 /* 01.mp3 in Resources */,
+				E6F4DB121C23DE67008806FF /* 01.mp3 in Resources */,
 				E6FD10FF1C1AC31A006ACE32 /* Assets.xcassets in Resources */,
 				E6FD10FA1C1AC31A006ACE32 /* Main.storyboard in Resources */,
 			);
@@ -500,6 +500,7 @@
 				E6FD111E1C1AC31A006ACE32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6FD111F1C1AC31A006ACE32 /* Build configuration list for PBXNativeTarget "musplayTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +509,7 @@
 				E6FD11211C1AC31A006ACE32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6FD11221C1AC31A006ACE32 /* Build configuration list for PBXNativeTarget "musplayUITests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +518,7 @@
 				E6FD11241C1AC31A006ACE32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
