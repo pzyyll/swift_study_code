@@ -156,11 +156,20 @@ class UITableViewController: UIViewController, UITableViewDataSource, UITableVie
         let data = self.serchConten[indexPath.section]
         
         if (indexPath.section == 0) {
+            var str = ""
             let cell = self.tableView!.dequeueReusableCellWithIdentifier(self.identify, forIndexPath: indexPath)
             cell.accessoryType = .DisclosureIndicator
             cell.textLabel!.text = data![indexPath.row]
-            let image = UIImage(named: "heart");
-            cell.imageView!.image = image;
+            if (indexPath.row < 2) {
+                str = "heart"
+                let image = UIImage(named: str)
+                cell.imageView!.image = image;
+            } else {
+                str = "u2"
+                let image = UIImage(named: str)
+                cell.imageView!.image = image;
+            }
+            
             
             return cell;
         } else {

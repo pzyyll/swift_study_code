@@ -26,8 +26,8 @@ class ViewController: UIViewController {
             
             //获取对象中的值并打印到控制台
             for person in jsonObj {
-                let name = person["Name"] as! String
-                print(name)
+                let name = person["Name"] //as! String
+                print(name!)
                 
                 let id = person["id"] as! Int
                 print(id)

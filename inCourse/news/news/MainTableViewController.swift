@@ -35,10 +35,18 @@ class MainTableViewController: UITableViewController {
         //2.封装NSREQUEST
         let request = NSURLRequest(URL: url!)
         //3.异步链接
+        //NSURLSession
         let queue = NSOperationQueue()
+//        var session = NSURLSession.sharedSession()
+//        var task = session.dataTaskWithRequest(<#T##request: NSURLRequest##NSURLRequest#>) { (<#NSData?#>, <#NSURLResponse?#>, <#NSError?#>) -> Void in
+//            <#code#>
+//        }
+        UIApplication.sharedApplication().networkActivityIndicatorVisible=true
         NSURLConnection.sendAsynchronousRequest(request, queue: queue) { (response, data, error) -> Void in
             if error != nil {
                 print(error)
+                self.refreshControl?.endRefreshing()
+                UIApplication.sharedApplication().networkActivityIndicatorVisible=false
             } else if data == nil {
                     print("data is empty")
             } else {
@@ -48,9 +56,9 @@ class MainTableViewController: UITableViewController {
                 do {
                     let jsonObj = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
                         as! NSMutableDictionary
-                    
+                    print(jsonObj)
                     let newsDataSource = jsonObj["大连"] as! NSArray
-                    var currentNewsDataSource = NSMutableArray()
+                    let currentNewsDataSource = NSMutableArray()
                     for currentNews in newsDataSource {
                         let newsItem = NewsItem()
                         //news title
@@ -60,7 +68,7 @@ class MainTableViewController: UITableViewController {
                         //news image
                         //currentNews["imgsrc"] as! String
                         //append to array
-                        currentNewsDataSource.addObject(NewsItem)
+                        currentNewsDataSource.addObject(newsItem)
                     }
                     
                     dispatch_async(dispatch_get_main_queue(), {() -> Void in
