@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6DEBB01C26C8AD000CD877 /* InstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DEBAF1C26C8AD000CD877 /* InstallViewController.swift */; };
 		E6683F421BFEF4A100162D7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6683F411BFEF4A100162D7D /* AppDelegate.swift */; };
 		E6683F471BFEF4A100162D7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6683F451BFEF4A100162D7D /* Main.storyboard */; };
 		E6683F4A1BFEF4A100162D7D /* LoginUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6683F481BFEF4A100162D7D /* LoginUI.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C6DEBAF1C26C8AD000CD877 /* InstallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallViewController.swift; sourceTree = "<group>"; };
 		E6683F3E1BFEF4A100162D7D /* LoginUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6683F411BFEF4A100162D7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6683F461BFEF4A100162D7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C6DEBAC1C26C849000CD877 /* InstallPageView */ = {
+			isa = PBXGroup;
+			children = (
+				4C6DEBAF1C26C8AD000CD877 /* InstallViewController.swift */,
+			);
+			name = InstallPageView;
+			sourceTree = "<group>";
+		};
 		E6683F351BFEF4A100162D7D = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 				E68C5A661C115D3000151701 /* MapView */,
 				E6F7DA541C0835980065866E /* UIsegmentedControl */,
 				E6683F721BFEF6DE00162D7D /* LoginAndOut */,
+				4C6DEBAC1C26C849000CD877 /* InstallPageView */,
 				E6683F411BFEF4A100162D7D /* AppDelegate.swift */,
 				E6683F451BFEF4A100162D7D /* Main.storyboard */,
 				E6683F4B1BFEF4A100162D7D /* Assets.xcassets */,
@@ -309,6 +320,7 @@
 				E6683F4A1BFEF4A100162D7D /* LoginUI.xcdatamodeld in Sources */,
 				E6683F421BFEF4A100162D7D /* AppDelegate.swift in Sources */,
 				E6F7DA531C0829590065866E /* RegisterViewController.swift in Sources */,
+				4C6DEBB01C26C8AD000CD877 /* InstallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

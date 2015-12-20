@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        let loginController = LoginViewController()
+        let loginController = InstallViewController() //LoginViewController()
         self.window?.rootViewController = loginController
         return true
     }
