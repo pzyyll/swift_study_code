@@ -34,7 +34,7 @@ class TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
     }
     
     func sortDate(m1: NoteItem, m2: NoteItem) -> Bool {
-        return m1.date?.timeIntervalSince1970 > m2.date?.timeIntervalSince1970
+        return m1.date!.timeIntervalSince1970 > m2.date!.timeIntervalSince1970
     }
     
     override func reloadData() {
@@ -80,5 +80,6 @@ class TableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
+    
 
 }

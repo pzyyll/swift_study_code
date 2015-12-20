@@ -1,7 +1,7 @@
 //: Playground - noun: a place where people can play
 
 import UIKit
-
+/*
 let string = "Hello world"
 let utf8Encode = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
 
@@ -84,3 +84,68 @@ for (x, y) in dict {
     print(x)
     print(y)
 }
+
+class item {
+    var i = 0
+}
+
+var nSection = NSMutableArray()
+var aSec = NSMutableArray()
+
+nSection.addObject(aSec)
+nSection.addObject("ab")
+nSection[0].addObject("string")
+nSection[0].addObject("jjj")
+let a = nSection[0][0]
+
+let date = NSDate()
+let datej = NSDateFormatter()
+datej.dateFormat = "yyyy-MM-dd HH:mm"
+var time = datej.stringFromDate(date)
+let range = time.startIndex...time.endIndex.advancedBy(-6)
+time.substringWithRange(range)
+
+var arr1 = NSMutableArray()
+var arr2 = NSMutableArray()
+
+arr1.addObject("abc")
+arr1.addObject("cde")
+
+arr2 = arr1.mutableCopy() as! NSMutableArray;
+
+arr2.removeLastObject()
+
+var time1 = NSDate()
+datej.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+func == (letf: test, right: test) -> Bool {
+    return letf.str == right.str
+}
+class test {
+    var str = ""
+    init(str: String) {
+        self.str = str
+    }
+}
+
+arr1.removeAllObjects()
+arr1.addObject(test(str: "abc"))
+arr1.addObject(test(str: "abcde00"))
+arr1.addObject(test(str: "ccc"))
+
+arr2 = arr1.mutableCopy() as! NSMutableArray
+
+for item in arr1 {
+    if (arr2[1] as! test) == (item as! test){
+        print((item as! test).str)
+        (item as! test).str = "123"
+    }
+}
+arr1
+*/
+
+var dict = ["12": "abc"]
+dict["432"] = "cbd"
+dict
+dict.count
+

@@ -10,7 +10,7 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-    let newsString = "http://c.3g.163.com/nc/article/local/5aSn6L%2Be/0-20.html"
+    let newsString = "http://c.m.163.com/nc/article/headline/T1348647853363/0-20.html"
     var newsLibary = [NewsItem]()
     var news = []
     
@@ -18,7 +18,7 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
-        self.title = "大连新闻"
+        self.title = "网易新闻"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -56,19 +56,29 @@ class MainTableViewController: UITableViewController {
                 do {
                     let jsonObj = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
                         as! NSMutableDictionary
-                    print(jsonObj)
-                    let newsDataSource = jsonObj["大连"] as! NSArray
+                    //print(jsonObj)
+                    let newsDataSource = jsonObj["T1348647853363"] as! NSArray
                     let currentNewsDataSource = NSMutableArray()
                     for currentNews in newsDataSource {
                         let newsItem = NewsItem()
-                        //news title
-                        newsItem.newsTitle = currentNews["title"] as? String
-                        //news link address
-                        newsItem.newsAddr = currentNews["url"] as? String
-                        //news image
-                        //currentNews["imgsrc"] as! String
-                        //append to array
-                        currentNewsDataSource.addObject(newsItem)
+                        
+                        if ((currentNews["url_3w"] as? String) != nil) {
+                            newsItem.newsAddr = currentNews["url_3w"] as? String
+                            newsItem.newsTitle = currentNews["title"] as? String
+                            newsItem.newsDigest = currentNews["digest"] as? String
+                            newsItem.newsThumb = currentNews["imgsrc"] as? String
+                            
+                            currentNewsDataSource.addObject(newsItem)
+                        }
+//                        let newsItem = NewsItem()
+//                        //news title
+//                        newsItem.newsTitle = currentNews["title"] as? String
+//                        //news link address
+//                        newsItem.newsAddr = currentNews["url"] as? String
+//                        //news image
+//                        //currentNews["imgsrc"] as! String
+//                        //append to array
+//                        currentNewsDataSource.addObject(newsItem)
                     }
                     
                     dispatch_async(dispatch_get_main_queue(), {() -> Void in
@@ -108,12 +118,34 @@ class MainTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        //let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        
+        let cell = UITableViewCell(style: .Subtitle, reuseIdentifier: "reuseIdentifier")
         
         // Configure the cell...
         let aNew = self.news[indexPath.row] as! NewsItem
         
         cell.textLabel?.text = aNew.newsTitle
+        cell.detailTextLabel?.text = aNew.newsDigest
+        
+        var img: UIImage?
+        
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: aNew.newsThumb!)
+
+        //let task = NSURLSessionDataTask
+        let semaphore = dispatch_semaphore_create(0)
+        let task = session.dataTaskWithRequest(NSURLRequest(URL: url!)) { (data, respond, error) -> Void in
+            img = UIImage(data: data!)
+            print(img)
+            dispatch_semaphore_signal(semaphore)
+        }
+        task.resume()
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        
+        print(1)
+        cell.imageView?.image = img
+        cell.imageView?.frame.size.width = 30
         cell.accessoryType = .DisclosureIndicator
         
         return cell
@@ -121,11 +153,11 @@ class MainTableViewController: UITableViewController {
     
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var row = indexPath.row
-        var data = self.news[row] as! NewsItem
+        let row = indexPath.row
+        let data = self.news[row] as! NewsItem
         
         //push way
-        var webView = DetailViewController()
+        let webView = DetailViewController()
         webView.title = data.newsTitle
         webView.url = NSURL(string: data.newsAddr!)
         self.navigationController?.pushViewController(webView, animated: true)

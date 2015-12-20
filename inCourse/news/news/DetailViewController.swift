@@ -52,8 +52,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        var url = NSURL(string: "http://www.apple.com/")
-        var request = NSURLRequest(URL: url!)
+        let request = NSURLRequest(URL: url!)
         
         self.webView?.loadRequest(request)
         

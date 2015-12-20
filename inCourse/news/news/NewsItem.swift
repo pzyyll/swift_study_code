@@ -10,6 +10,7 @@ import Foundation
 
 class NewsItem {
     var newsTitle: String?
+    var newsDigest: String?
     var newsAddr: String?
     var newsThumb: String?
     
