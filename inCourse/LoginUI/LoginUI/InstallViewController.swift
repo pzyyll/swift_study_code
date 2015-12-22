@@ -30,7 +30,8 @@ class InstallViewController: UIViewController, UIScrollViewDelegate {
         scrollView?.showsVerticalScrollIndicator = false
         scrollView?.scrollsToTop = false
         scrollView?.delegate = self
-        
+        scrollView?.userInteractionEnabled = true
+        self.view.userInteractionEnabled = true
         scrollView?.pagingEnabled = true
         let size = scrollView?.bounds.size
         print(size)
@@ -52,11 +53,14 @@ class InstallViewController: UIViewController, UIScrollViewDelegate {
                 btn.setTitleColor(UIColor.redColor(), forState: .Highlighted)
                 btn.addTarget(self, action: Selector("nowBeging"), forControlEvents: .TouchUpInside)
                 btn.frame = CGRectMake(0, 0, 200, 30)
+                print(page.center)
                 btn.center = self.view.center
                 btn.enabled = true
+                btn.userInteractionEnabled = true
                 page.addSubview(btn)
                 page.userInteractionEnabled = true
             }
+            
             scrollView?.addSubview(page)
         }
         
@@ -65,7 +69,10 @@ class InstallViewController: UIViewController, UIScrollViewDelegate {
         pageControl?.numberOfPages = self.backImgs.count
         pageControl?.currentPage = 0
         pageControl?.addTarget(self, action: "pageChange:", forControlEvents: .ValueChanged)
-        pageControl?.center.y += 300
+        
+        pageControl?.frame.size.height = 30
+        pageControl?.frame.origin.y = self.view.frame.height - 50
+        
         self.view.addSubview(self.scrollView!)
         self.view.addSubview(self.pageControl!)
     }
@@ -73,6 +80,8 @@ class InstallViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // Do any additional setup after loading the view.
     }
 

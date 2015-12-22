@@ -149,3 +149,19 @@ dict["432"] = "cbd"
 dict
 dict.count
 
+var str = "1http://zhangmenshiting.baidu.com/data2/music/51948781/ZmNsaG1tb2lfn6NndK6ap5WXcJqWa5yckmRnamdrbJpiaZRtZWpqnZaUmZqYl5uel2OZa2ppcGqSlGNqaGaZnWWYY1qin5t1YWBpZGhqaG1iZGNlaGZwbjE$51948781.mp3?xcode=fa5eda246255b17a9043eebffcadff1f75392ab0630be4f0&mid=0.6034151201309689341760http://zhangmenshiting2.baidu.com/data2/music/51948533/ZmNsaG1ramtfn6NndK6ap5WXcJqWa5yckmRnamdrbJpiaZRtZWpqnZaUmZqYl5uel2OZa5aZbm1lamyZmGlpnGeXZFqin5t1YWBpZGhqaG1iZGNlaGZwbjE$51948533.mp3?xcode=fa5eda246255b17a9043eebffcadff1f7ac75489ec32d6e1&mid=0.60341512013096893417603b43390e9d7796cbf754a97c58d8101551464fccmp33418042128"
+
+var title = "稀有动物"
+var author = "A-Lin"
+
+author.utf8
+var index = strstr(str, "http://")
+
+let session = NSURLSession.sharedSession()
+let strUrl = "http://box.zhangmen.baidu.com/x?op=12&count=1&title=稀有动物$$A-Lin$$$$"
+print(strUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()))
+let url = NSURL(string: strUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+let task = session.dataTaskWithRequest(NSURLRequest(URL: url!)) { (data, response, error) -> Void in
+   print(data)
+}
+task.resume()
