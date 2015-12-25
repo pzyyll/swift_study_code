@@ -29,12 +29,12 @@ class MusicTableViewController: UITableViewController {
         self.btnStop = UIButton()
     
         self.navigationController?.navigationBarHidden = true
-        var bgView = UIView(frame: CGRectMake(0, 20, self.view.frame.width, self.view.frame.height / 2))
+        let bgView = UIView(frame: CGRectMake(0, 20, self.view.frame.width, self.view.frame.height / 2))
         self.imgView.frame = bgView.frame
         self.imgView.frame.size.height -= 50
         bgView.addSubview(self.imgView)
         
-        var tool = UIView(frame: CGRectMake(0, imgView.frame.height, self.view.frame.width, 50))
+        let tool = UIView(frame: CGRectMake(0, imgView.frame.height, self.view.frame.width, 50))
         tool.backgroundColor = UIColor.blackColor()
         bgView.addSubview(tool)
         
@@ -114,13 +114,16 @@ class MusicTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let aterView = UIAlertController(title: "Shit", message: "耐心等待，不要乱点，会崩死的！！！！什么破AV!", preferredStyle: UIAlertControllerStyle.Alert)
-        let action = UIAlertAction(title: "ok", style: .Cancel, handler: nil)
-        aterView.addAction(action)
-        self.presentViewController(aterView, animated: true, completion: nil)
+//        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+//        indicator.center = self.view.center
+//        indicator.alpha = 0.5
+//        indicator.backgroundColor = UIColor.grayColor()
+//        indicator.layer.cornerRadius = 6;
+//        indicator.layer.masksToBounds = true;
+//        self.tableView.addSubview(indicator)
+//        indicator.startAnimating()
+//        self.imgView.image = self.sonLibary[indexPath.row].img
         
-        
-        //self.imgView.image = self.sonLibary[indexPath.row].img
         print(self.songBundle)
         print(self.songBundle[indexPath.row])
         //1.create player
@@ -153,7 +156,7 @@ class MusicTableViewController: UITableViewController {
         task2.resume()
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
         //self.dismissViewControllerAnimated(true, completion: nil)
-        
+        //indicator.stopAnimating()
         do {
             self.player = try AVAudioPlayer(data: nsdata)
             

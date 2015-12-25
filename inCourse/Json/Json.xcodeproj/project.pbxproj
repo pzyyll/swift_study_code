@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C2C0C911C2C188D00423D1D /* t.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 4C2C0C901C2C188D00423D1D /* t.geojson */; };
 		E6FD10701C1AA51B006ACE32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD106F1C1AA51B006ACE32 /* AppDelegate.swift */; };
 		E6FD10721C1AA51B006ACE32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD10711C1AA51B006ACE32 /* ViewController.swift */; };
 		E6FD10751C1AA51B006ACE32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FD10731C1AA51B006ACE32 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C2C0C901C2C188D00423D1D /* t.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = t.geojson; path = ../t.geojson; sourceTree = "<group>"; };
 		E6FD106C1C1AA51B006ACE32 /* Json.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Json.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FD106F1C1AA51B006ACE32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6FD10711C1AA51B006ACE32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				E6FD107E1C1AA51B006ACE32 /* Info.plist */,
 				E6FD10761C1AA51B006ACE32 /* Json.xcdatamodeld */,
 				E6FD10A01C1AA588006ACE32 /* personlist.geojson */,
+				4C2C0C901C2C188D00423D1D /* t.geojson */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				E6FD107D1C1AA51B006ACE32 /* LaunchScreen.storyboard in Resources */,
 				E6FD107A1C1AA51B006ACE32 /* Assets.xcassets in Resources */,
 				E6FD10751C1AA51B006ACE32 /* Main.storyboard in Resources */,
+				4C2C0C911C2C188D00423D1D /* t.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +496,7 @@
 				E6FD10991C1AA51B006ACE32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6FD109A1C1AA51B006ACE32 /* Build configuration list for PBXNativeTarget "JsonTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +505,7 @@
 				E6FD109C1C1AA51B006ACE32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6FD109D1C1AA51B006ACE32 /* Build configuration list for PBXNativeTarget "JsonUITests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +514,7 @@
 				E6FD109F1C1AA51B006ACE32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

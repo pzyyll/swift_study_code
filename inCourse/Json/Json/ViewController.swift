@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let jsonFilePath = NSBundle.mainBundle().pathForResource("personlist", ofType: "geojson")
+        let jsonFilePath = NSBundle.mainBundle().pathForResource("t", ofType: "geojson")
         print(jsonFilePath)
         
         let data = NSData(contentsOfFile: jsonFilePath!)

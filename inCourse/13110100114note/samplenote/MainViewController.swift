@@ -175,6 +175,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let alter = UIAlertController(title: "yes", message: "", preferredStyle: UIAlertControllerStyle.Alert);
+        alter.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alter, animated: true, completion: nil)
+        
         var data = NoteItem()
         for detailNoteItem in self.noteLibary {
             let temp = self.searchRes[indexPath.row] as! NoteItem
