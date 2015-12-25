@@ -200,7 +200,7 @@ class MusicTableViewController: UITableViewController {
     }
     
     func progressCtr() {
-        //self.player.currentTime = self.player.duration * NSTimeInterval
+        self.player.currentTime = self.player.duration * NSTimeInterval(slider!.value)
     }
     
     /*
