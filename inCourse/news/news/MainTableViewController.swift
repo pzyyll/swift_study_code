@@ -127,26 +127,23 @@ class MainTableViewController: UITableViewController {
         
         cell.textLabel?.text = aNew.newsTitle
         cell.detailTextLabel?.text = aNew.newsDigest
-        
+        print(cell.textLabel?.frame)
         var img: UIImage?
-        
-        let session = NSURLSession.sharedSession()
+    
         let url = NSURL(string: aNew.newsThumb!)
-
-        //let task = NSURLSessionDataTask
-        let semaphore = dispatch_semaphore_create(0)
-        let task = session.dataTaskWithRequest(NSURLRequest(URL: url!)) { (data, respond, error) -> Void in
-            img = UIImage(data: data!)
-            print(img)
-            dispatch_semaphore_signal(semaphore)
-        }
-        task.resume()
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER)
+        img = UIImage(data: NSData(contentsOfURL: url!)!)
         
-        print(1)
+        print(cell.frame)
         cell.imageView?.image = img
-        cell.imageView?.frame.size.width = 30
+        let view = UIImageView(image: UIImage(named: "u10000"))
+        view.frame = CGRectMake(0, 0, 30, 30)
+
+        cell.addSubview(view)
+        //cell.imageView?.image?.drawInRect(CGRectMake(0, 0, 30, 30))
+        //cell.addSubview(<#T##view: UIView##UIView#>)
+
         cell.accessoryType = .DisclosureIndicator
+        
         
         return cell
     }

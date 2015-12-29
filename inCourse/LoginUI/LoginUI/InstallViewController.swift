@@ -69,7 +69,7 @@ class InstallViewController: UIViewController, UIScrollViewDelegate {
         pageControl?.numberOfPages = self.backImgs.count
         pageControl?.currentPage = 0
         pageControl?.addTarget(self, action: "pageChange:", forControlEvents: .ValueChanged)
-        
+        self.pageControl?.userInteractionEnabled = true
         pageControl?.frame.size.height = 30
         pageControl?.frame.origin.y = self.view.frame.height - 50
         
@@ -93,13 +93,15 @@ class InstallViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let page = Int(self.scrollView!.contentOffset.x / self.scrollView!.frame.width)
         self.pageControl?.currentPage = page
+        
+        print(page)
     }
     
     func pageChange(sender: UIPageControl) {
         var frame = scrollView?.frame
         frame!.origin.x = frame!.width * CGFloat(sender.currentPage)
         frame?.origin.y = 0
-        
+        print(frame!)
         scrollView?.scrollRectToVisible(frame!, animated: true)
     }
     
@@ -111,6 +113,7 @@ class InstallViewController: UIViewController, UIScrollViewDelegate {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
     /*
     // MARK: - Navigation
 

@@ -9,28 +9,43 @@
 import UIKit
 
 class MainTabViewController: UITabBarController {
-
-    let tabs = ["test", "messages", "me"];
     
     override func loadView() {
         super.loadView()
         
-        var items = [UITabBarItem]()
-        for tab in tabs {
-            let tabBarItem = UITabBarItem();
-            tabBarItem.image = UIImage(named: tab)
-            tabBarItem.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-            tabBarItem.title = tab;
-            items.append(tabBarItem)
-        }
-        self.tabBar.setItems(items, animated: true)
+        self.tabBar.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 245/255)
+        //self.tabBar.setItems(items, animated: true)
         
-        self.setViewControllers([TestSearchViewController()], animated: true)
+        
+        let messages = MainViewController()
+        let navMessages = UINavigationController(rootViewController: messages)
+        var img = UIImage(named: "test");
+        navMessages.tabBarItem.image = UIImage(data: UIImagePNGRepresentation(img!)!, scale: 2.0)
+        navMessages.tabBarItem.title = "备忘录";
+        
+        
+        let test = TestSearchViewController()
+        test.title = "Test"
+        let navTest = UINavigationController(rootViewController: test)
+        img = UIImage(named: "pen");
+        navTest.tabBarItem.image = UIImage(data: UIImagePNGRepresentation(img!)!, scale: 1.9)
+        
+        
+        
+        let me = SelfInforViewController()
+        let navMe = UINavigationController(rootViewController: me)
+        img = UIImage(named: "me")
+        navMe.tabBarItem.image = UIImage(data: UIImagePNGRepresentation(img!)!, scale: 2.0)
+        navMe.tabBarItem.title = "Me"
+        
+        self.setViewControllers([navTest, navMessages, navMe], animated: true)
         self.selectedIndex = 0;
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
 
         // Do any additional setup after loading the view.
     
